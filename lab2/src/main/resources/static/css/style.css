@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.background{
+	background:#F00; 
+	color:#FFF
+}
+#sright{
+	float:right;
+	width:120px;
+}
+.btns{
+	border-style:solid;
+	border-width:1px;
+	border-color:#00FF00;
+	background-color:#000000;
+	color:#00FF00;
+}
+.container{
+	padding:300px;
+	margin:0 auto;
+	background:#00FF00;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>教学平台</title>
+<link rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Web高级编程教学网站</a>
+    <div>
+       	<input type="text">
+       	<input id="btn" class="btns" type="button" onclick="changeMessage()" value="Search">
+    </div>
+</nav>
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title" >
+				<span id="num" th:text="'主题' + ${num}"></span>
+			</h3>
+		</div>
+		<div class="panel-body">
+			<h1>Hello...</h1>
+			<span id="msg" th:text="${message}"></span>
+		</div>
+	</div>  
+</div>
+<!-- /.container -->
+<script type="text/javascript" th:src="@{webjars/jquery/3.0.0/js/jquery.min.js}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#btn').click(function(){
+		$.ajax({
+	        url: "/task/1"
+	    }).then(function(data) {
+	    	$("#msg").text(data.id+ ":"+data.article);
+	    	
+	    });
+	}); 
+});
+</script>
+</body>
+</html>
