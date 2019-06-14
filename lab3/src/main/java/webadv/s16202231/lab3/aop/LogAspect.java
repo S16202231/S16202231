@@ -20,7 +20,6 @@ public class LogAspect {
     //@Before("webLog()")
     @Before("execution(public * webadv.s16202231.lab3.HomeController.check(..)) && args(user,result,..)")
     public void doBefore(User user, BindingResult result) throws Throwable {
-    	logger.info(String.format("Account:%s, login %s.", user.getAccount(),result.hasErrors()?"failed":"succeeded"));
-       
+    	logger.info(String.format("Account:%s, login %s.", user.getAccount(),result.hasErrors()?"failed":"succeeded"));  
     }    
 }
